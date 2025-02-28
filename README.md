@@ -1,3 +1,21 @@
+# CLIP
+
+## Our Contributions
+
+We have successfully implemented a zero-shot prediction pipeline and developed a fine-tuning strategy based on the original CLIP model. Our key achievements include:
+
+- **Zero-Shot Prediction Pipeline:**  
+  We process our dataset through CLIP to compute cosine similarities between image and text embeddings. We then transform these similarity values to a 0–100 scale (using a linear transformation, with plans to explore nonlinear scaling methods) to quantify the alignment score between images and their corresponding text prompts. This demonstrates that the pre-trained CLIP model can effectively measure image-text matching without additional task-specific training.
+
+- **Manually Labeled Dataset:**  
+  Our custom dataset has been manually annotated into distinct alignment categories (high, medium, and low). These curated labels serve as the foundation for our future fine-tuning efforts.
+
+- **Fine-Tuning Strategy:**  
+  For our next step, we plan to fine-tune the CLIP model using our labeled data. Our approach involves freezing the majority of the pre-trained CLIP parameters and training only a new classification head to predict our manually labeled alignment categories. This method leverages the robust features learned by CLIP while mitigating overfitting and reducing training costs.
+
+The zero_shot.py demonstrates our implementation for scoring images based on the folder structure (where folder names encode alignment categories) and computing alignment scores.
+
+
 ## Below is the original CLIP README documentation
 # CLIP
 
